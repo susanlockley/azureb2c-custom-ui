@@ -19,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/unified',
     name: 'unified',
     component: () => import(/* webpackChunkName: "about" */ '../views/UnifiedView.vue')
+  },
+  {
+    path: '/forgotpassword',
+    name: 'forgotpassword',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SaForgotPassword.vue')
   }
 ]
 

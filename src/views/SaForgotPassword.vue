@@ -1,39 +1,40 @@
 <template>
   <div>
+    <label>Email Address</label>
+    <input type="text" v-model="emailAddressOurs" required>
     <label>Sign in Name</label>
     <input type="text" v-model="signinNameOurs" required>
-    <label>Password</label>
-    <input type="password" v-model="passwordOurs" required>
   </div>
 
-  <button @click="handleSubmit()">Create</button>
+  <button @click="handleSubmit()">Create</button> 
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-    data() {
+       data() {
         return {
             signinNameOurs: '',
-            passwordOurs: ''
+            emailAddressOurs: ''
         }
     },
     methods: {
         handleSubmit() {
             // this.passwordError = this.password.length > 5 ? '' : 'Error for password'
             var b2cSigninName = document.querySelector('#api')?.querySelector<HTMLInputElement>('#signInName');
-            var b2cPassword = document.querySelector('#api')?.querySelector<HTMLInputElement>('#password');
-            var b2cNext = document.querySelector('#api')?.querySelector<HTMLElement>('#next');
+            var b2cEmail = document.querySelector('#api')?.querySelector<HTMLInputElement>('#email');
+            var b2cContinue = document.querySelector('#api')?.querySelector<HTMLElement>('#continue');
 
+            this.signinNameOurs = 'abc'
             if (b2cSigninName) {
                 b2cSigninName.value = this.signinNameOurs
             }
-            if (b2cPassword) {
-                b2cPassword.value = this.passwordOurs
+            if (b2cEmail) {
+                b2cEmail.value = this.emailAddressOurs
             }
-            if (b2cNext) {
-                b2cNext.click();
+            if (b2cContinue) {
+                b2cContinue.click();
             }
             
             
@@ -41,6 +42,7 @@ export default defineComponent({
     }
 
 })
+
 </script>
 
 <style>
