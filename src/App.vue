@@ -1,21 +1,15 @@
 <template>
   <HeaderComponent/>
-  <!-- <nav> -->
-    <!-- <router-link to="/">Home</router-link> | -->
-    <!-- <router-link to="/about">About</router-link> -->
-    <!-- <router-link to="/unified">Unifed</router-link> -->
-  <!-- </nav> -->
-  <!-- <router-view/> -->
-  <!-- <SaForgotPassword/> -->
-  <!-- <SaEnterTotp/> -->
-  <div>
+  <SaForgotPassword/>
+  <SaEnterTotp/>
+  <!-- <div>
     <label>Sign in Name app.vue</label>
     <input type="text" v-model="signinNameOurs" required>
     <label>Password app.vue</label>
     <input type="password" v-model="passwordOurs" required>
-  </div>
+  </div> -->
 
-  <button @click="handleSubmit()">Create</button>
+  <!-- <button @click="handleSubmit()">Create</button> -->
 
   <FooterComponent/>
 </template>
@@ -25,8 +19,8 @@ import { defineComponent } from 'vue'
 // import SignupForm from './components/SignupForm.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
-// import SaEnterTotp from './views/SaEnterTotp.vue';
-// import SaForgotPassword from './views/SaForgotPassword.vue';
+import SaEnterTotp from './views/SaEnterTotp.vue';
+import SaForgotPassword from './views/SaForgotPassword.vue';
 
 
 export default defineComponent({
@@ -61,14 +55,14 @@ export default defineComponent({
     // SignupForm,
     HeaderComponent,
     FooterComponent,
-    // SaEnterTotp,
-    // SaForgotPassword
-  }
+    SaEnterTotp,
+    SaForgotPassword
+  },
 
     
-  // setup() {
+  setup() {
     
-  // }
+  }
   
 })
 </script>
