@@ -6,8 +6,8 @@
     <!-- <router-link to="/unified">Unifed</router-link> -->
   <!-- </nav> -->
   <!-- <router-view/> -->
-  <!-- <SaForgotPassword/> -->
-  <!-- <SaEnterTotp/> -->
+  <SaForgotPassword/>
+  <SaEnterTotp/>
   <div>
     <label>Sign in Name app.vue</label>
     <input type="text" v-model="signinNameOurs" required>
@@ -61,8 +61,8 @@ export default defineComponent({
     // SignupForm,
     HeaderComponent,
     FooterComponent,
-    // SaEnterTotp,
-    // SaForgotPassword
+    SaEnterTotp,
+    SaForgotPassword
   }
 
     
