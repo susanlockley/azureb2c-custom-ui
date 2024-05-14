@@ -5,8 +5,9 @@
     <!-- <router-link to="/about">About</router-link> -->
     <!-- <router-link to="/unified">Unifed</router-link> -->
   <!-- </nav> -->
-  <router-view/>
-  
+  <!-- <router-view/> -->
+  <SaForgotPassword/>
+  <SaEnterTotp/>
   <div>
     <label>Sign in Name app.vue</label>
     <input type="text" v-model="signinNameOurs" required>
@@ -24,6 +25,8 @@ import { defineComponent } from 'vue'
 // import SignupForm from './components/SignupForm.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
+import SaEnterTotp from './views/SaEnterTotp.vue';
+import SaForgotPassword from './views/SaForgotPassword.vue';
 
 
 export default defineComponent({
@@ -57,7 +60,9 @@ export default defineComponent({
   components: {
     // SignupForm,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SaEnterTotp,
+    SaForgotPassword
   }
 
     
