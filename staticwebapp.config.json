@@ -3,9 +3,9 @@
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
     }
-    ,
-    "navigationFallback": {
-    "rewrite": "/index.html",
-    "exclude": ["/img/*.{png,jpg,gif,webp}", "/css/*"]
-    }
+    // ,
+    // "navigationFallback": {
+    // "rewrite": "/index.html",
+    // "exclude": ["/img/*.{png,jpg,gif,webp}", "/css/*"]
+    // }
   }
