@@ -8,9 +8,9 @@
   <router-view/>
   
   <div>
-    <label>Sign in Name</label>
+    <label>Sign in Name app.vue</label>
     <input type="text" v-model="signinNameOurs" required>
-    <label>Password</label>
+    <label>Password app.vue</label>
     <input type="password" v-model="passwordOurs" required>
   </div>
 
