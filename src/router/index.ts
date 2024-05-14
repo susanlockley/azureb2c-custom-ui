@@ -24,6 +24,10 @@ const routes: Array<RouteRecordRaw> = [
     path: '/forgotpassword',
     name: 'forgotpassword',
     component: () => import(/* webpackChunkName: "about" */ '../views/SaForgotPassword.vue')
+  },{
+    path: '/entertotp',
+    name: 'entertotp',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SaEnterTotp.vue')
   }
 ]
 
