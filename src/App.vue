@@ -39,8 +39,8 @@ export default defineComponent({
     
     const pageId = computed(() => {
       var api = document.querySelector<HTMLElement>('#api');
-      if (api && api.getAttribute('data-name') && api.getAttribute('data-name') == 'Unified'){
-        return 'unified'
+      if (api && api.getAttribute('data-name') && api.getAttribute('data-name') === 'Unified'){
+        return 'Unified'
       }
 
       var saPageId = document.querySelector('#api')?.querySelector<HTMLElement>('#SAPageID');
