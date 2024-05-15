@@ -57,12 +57,13 @@ export default defineComponent({
     FooterComponent,
     SaEnterTotp,
     SaForgotPassword
-  },
+  }
+  // ,
 
     
-  setup() {
+  // setup() {
     
-  }
+  // }
   
 })
 </script>
