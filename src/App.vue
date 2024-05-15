@@ -1,7 +1,8 @@
 <template>
   <HeaderComponent/>
-  <SaForgotPassword/>
-  <SaEnterTotp/>
+  <UnifiedView v-if="pageId === 'Unified'"/>
+  <SaForgotPassword  v-if="pageId === 'SAForgotPassword'"/>
+  <SaEnterTotp  v-if="pageId === 'SAEnterTotp'"/>
   <!-- <div>
     <label>Sign in Name app.vue</label>
     <input type="text" v-model="signinNameOurs" required>
@@ -15,55 +16,59 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
 // import SignupForm from './components/SignupForm.vue'
 import HeaderComponent from './components/HeaderComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'
 import SaEnterTotp from './views/SaEnterTotp.vue';
 import SaForgotPassword from './views/SaForgotPassword.vue';
+import UnifiedView from './views/UnifiedView.vue';
 
 
 export default defineComponent({
-  data() {
-        return {
-            signinNameOurs: '',
-            passwordOurs: ''
-        }
-    },
-  methods: {
-    handleSubmit() {
-            // this.passwordError = this.password.length > 5 ? '' : 'Error for password'
-            var b2cSigninName = document.querySelector('#api')?.querySelector<HTMLInputElement>('#signInName');
-            var b2cPassword = document.querySelector('#api')?.querySelector<HTMLInputElement>('#password');
-            var b2cNext = document.querySelector('#api')?.querySelector<HTMLElement>('#next');
-
-            if (b2cSigninName) {
-                b2cSigninName.value = this.signinNameOurs
-            }
-            if (b2cPassword) {
-                b2cPassword.value = this.passwordOurs
-            }
-            if (b2cNext) {
-                b2cNext.click();
-            }
-            
-            
-        }
-  },
-
   components: {
     // SignupForm,
     HeaderComponent,
     FooterComponent,
     SaEnterTotp,
-    SaForgotPassword
-  }
-  // ,
+    SaForgotPassword,
+    UnifiedView
+  },
+ 
+  setup() {
+    
+    const pageId = computed(() => {
+      var api = document.querySelector<HTMLElement>('#api');
+      if (api && api.getAttribute('data-name') && api.getAttribute('data-name') == 'Unified'){
+        return 'unified'
+      }
 
-    
-  // setup() {
-    
-  // }
+      var saPageId = document.querySelector('#api')?.querySelector<HTMLElement>('#SAPageID');
+      if (saPageId && saPageId.textContent)
+      {
+        return saPageId.textContent
+      }
+
+      return ''
+    })
+    // var pageId = '' as string
+    // //var api = document.querySelector<HTMLElement>('#api')?.getAttribute('data-name');
+    //   var api = document.querySelector<HTMLElement>('#api');
+    // if (api && api.getAttribute('data-name') && api.getAttribute('data-name') == 'Unified'){
+    //   pageId = 'unified'
+    //   return pageId
+    // }
+
+    // var saPageId = document.querySelector('#api')?.querySelector<HTMLElement>('#SAPageID');
+    // if (saPageId && saPageId.textContent)
+    // {
+    //   pageId = saPageId.textContent
+    //   return pageId
+    // }
+
+    return { pageId }
+
+  }
   
 })
 </script>
